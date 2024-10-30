@@ -29,6 +29,9 @@ public class Parto {
     @Column(name = "OBSERVACIONES")
     private String observaciones;
 
+    @Column(name = "FOTO")
+    private byte[] foto;
+
     public Parto() {
     }
 
@@ -37,6 +40,14 @@ public class Parto {
         this.fecha = fecha;
         this.idMadre = idMadre;
         this.observaciones = observaciones;
+    }
+
+    public Parto(Long idAnimal, LocalDateTime fecha, Long idMadre, String observaciones, byte[] foto) {
+        this.idAnimal = idAnimal;
+        this.fecha = fecha;
+        this.idMadre = idMadre;
+        this.observaciones = observaciones;
+        this.foto = foto;
     }
 
     public Long getIdParto() {
@@ -77,5 +88,13 @@ public class Parto {
 
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }    
 }
