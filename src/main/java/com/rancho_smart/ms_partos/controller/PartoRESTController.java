@@ -38,6 +38,46 @@ public class PartoRESTController {
                     .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("/animal/{idAnimal}")
+    public ResponseEntity<List<Parto>> getPartosByIdAnimal(@PathVariable Long idAnimal){
+        List<Parto> partosAnimal = this.partoService.getPartosByIdAnimal(idAnimal);
+        if(partosAnimal.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(partosAnimal, HttpStatus.OK);
+        }
+    }
+
+    @GetMapping("/madre/{idMadre}")
+    public ResponseEntity<List<Parto>> getPartosByIdMadre(@PathVariable Long idMadre){
+        List<Parto> partosMadre = this.partoService.getPartosByIdMadre(idMadre);
+        if(partosMadre.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(partosMadre, HttpStatus.OK);
+        }
+    }
+
+    @GetMapping("/finca/{idFinca}")
+    public ResponseEntity<List<Parto>> getPartosByIdFinca(@PathVariable Long idFinca){
+        List<Parto> partosFinca = this.partoService.getPartosByIdFinca(idFinca);
+        if(partosFinca.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(partosFinca, HttpStatus.OK);
+        }
+    }
+
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<List<Parto>> getPartosByIdUsuario(@PathVariable Long idUsuario){
+        List<Parto> partosUsuario = this.partoService.getPartosByIdUsuario(idUsuario);
+        if(partosUsuario.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(partosUsuario, HttpStatus.OK);
+        }
+    }
+
     @PostMapping
     public ResponseEntity<Parto> saveParto(@RequestBody Parto parto) {
         Parto partoCreado = this.partoService.saveParto(parto);

@@ -32,22 +32,40 @@ public class Parto {
     @Column(name = "FOTO")
     private byte[] foto;
 
+    @Column(name = "ID_FINCA")
+    private Long idFinca;
+
+    @Column(name = "ID_USUARIO")
+    private Long idUsuario;
+
     public Parto() {
     }
 
-    public Parto(Long idAnimal, LocalDateTime fecha, Long idMadre, String observaciones) {
-        this.idAnimal = idAnimal;
-        this.fecha = fecha;
-        this.idMadre = idMadre;
-        this.observaciones = observaciones;
-    }
-
-    public Parto(Long idAnimal, LocalDateTime fecha, Long idMadre, String observaciones, byte[] foto) {
+    public Parto(Long idAnimal, LocalDateTime fecha, Long idMadre, String observaciones, byte[] foto, Long idFinca,
+            Long idUsuario) {
         this.idAnimal = idAnimal;
         this.fecha = fecha;
         this.idMadre = idMadre;
         this.observaciones = observaciones;
         this.foto = foto;
+        this.idFinca = idFinca;
+        this.idUsuario = idUsuario;
+    }
+
+    public Long getIdFinca() {
+        return idFinca;
+    }
+
+    public void setIdFinca(Long idFinca) {
+        this.idFinca = idFinca;
+    }
+
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public Long getIdParto() {

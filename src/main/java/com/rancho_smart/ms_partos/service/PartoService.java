@@ -19,6 +19,22 @@ public class PartoService {
         return this.partoRepository.findAll();
     }
 
+    public List<Parto> getPartosByIdAnimal(Long idAnimal){
+        return this.partoRepository.findByIdAnimal(idAnimal);
+    }
+
+    public List<Parto> getPartosByIdMadre(Long idMadre){
+        return this.partoRepository.findByIdMadre(idMadre);
+    }
+
+    public List<Parto> getPartosByIdFinca(Long idFinca){
+        return this.partoRepository.findByIdFinca(idFinca);
+    }
+
+    public List<Parto> getPartosByIdUsuario(Long idUsuario){
+        return this.partoRepository.findByIdUsuario(idUsuario);
+    }
+
     public Optional<Parto> getPartoById(Long id) {
         return this.partoRepository.findById(id);
     }
